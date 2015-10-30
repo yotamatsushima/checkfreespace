@@ -25,7 +25,7 @@ action: get
 
 response :
   type json
-  example {"result":0}
+  example {"Item":{"result":0}}
   result 0 登録成功  999　登録失敗
 
 ```
@@ -36,7 +36,8 @@ method: getdevice
 parameters: deviceid このマシンのデバイスＩＤ
 action: get
 response : type json
-           example {"result":0,"reserved":0,"alert":1}
+           example
+            {"Item":{"result":0,"reserved":0,"alert":1}}
            result 0 正常  999　異常
            reserved 0　この先、しばらくの時間空いています。
            alert 0 何もなし 1  xxxxx
@@ -54,7 +55,7 @@ response : type json
 
 #### DynamoDB
 ---------------------------------
- table: device
+ table: cfdevice
 　　deviceid String
     devicename String
     status Number
