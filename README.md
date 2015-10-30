@@ -18,9 +18,10 @@ _サーバにデバイスの情報を送る。_
 ```
 method: setdevice
 
-parameters: sts
+parameters: status
             0・・・誰も人がいないはず
             1・・・誰か人がいるはず
+            deviceid このマシンのデバイスＩＤ
 action: get
 
 response :
