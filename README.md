@@ -25,7 +25,7 @@ action: get
 
 response :
   type json
-  example {"Item":{"result":0}}
+  example {"result":0}
   result 0 登録成功  999　登録失敗
 
 ```
@@ -37,10 +37,17 @@ parameters: deviceid このマシンのデバイスＩＤ
 action: get
 response : type json
            example
-            {"Item":{"result":0,"reserved":0,"alert":1}}
-           result 0 正常  999　異常
-           reserved 0　この先、しばらくの時間空いています。
-           alert 0 何もなし 1  xxxxx
+           {
+             "Item": {
+               "devicename": "4001",
+               "reserved": 0,
+               "alert": 0,
+               "deviceid": "4F001",
+               "status": 0
+             }
+           }
+           alert 0 何もなし 1 アラートならして！
+           status 0 未使用 1 使用中
 
 ```
 
