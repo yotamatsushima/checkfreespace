@@ -19,8 +19,8 @@ _サーバにデバイスの情報を送る。_
 method: setdevice
 
 parameters: status
-            0・・・誰も人がいないはず
-            1・・・誰か人がいるはず
+              0・・・誰も人がいないはず
+              1・・・誰か人がいるはず
             deviceid このマシンのデバイスＩＤ
 action: get
 
@@ -52,6 +52,37 @@ response : type json
 
 ```
 
+_サーバからすべての情報をもらう_
+```
+method: getalldevices
+parameters: deviceid このマシンのデバイスＩＤ
+action: get
+response : type json
+        example
+        {
+          "Items": [
+            {
+              "devicename": "4001",
+              "reserved": 0,
+              "alert": 0,
+              "deviceid": "4F001",
+              "status": "0"
+            },
+            {
+              "devicename": "4002",
+              "reserved": 0,
+              "alert": 0,
+              "deviceid": "4F002",
+              "status": "0"
+            }
+          ],
+          "Count": 2,
+          "ScannedCount": 2
+        }
+        alert 0 何もなし 1 アラートならして！
+        status 0 未使用 1 使用中
+
+```
 #### S3
 ---------------------------------
  bucket名: checkfreespace
